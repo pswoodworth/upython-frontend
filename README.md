@@ -19,4 +19,4 @@ on the command line, run
 npm run build
 ```
 
-this will yield `./build`, in which you'll find `./build/index.html`, which is a single built file containing all of the javascript and css from the directory.
+this will yield `./build`, in which you'll find `./build/index.html`, which is a single built file containing all of the javascript and css from the `./src` directory.
