@@ -6,9 +6,10 @@ module.exports = {
       'whatwg-fetch',
       "./src/js/entry.js" 
     ],
+    target: "web",
     output: {
         path: __dirname,
-        filename: "./build/build.js",
+        filename: "./build/src/build.js",
     },
     module: {
         loaders: [

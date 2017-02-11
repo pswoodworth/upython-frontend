@@ -1,8 +1,8 @@
 var fs = require('fs');
 
 var files = {
-  "js": "./build/build.js",
-  "css": "./build/build.css"
+  "js": "./build/src/build.js",
+  "css": "./build/src/build.css"
 };
 
 var map = {};
@@ -22,11 +22,11 @@ var promises = Object.keys(files).map(function(key){
 
 Promise.all(promises).then(function(){
   var fs = require('fs');
-  fs.writeFile("./build/template-map.json", JSON.stringify(map), function(err) {
+  fs.writeFile("./build/src/template-map.json", JSON.stringify(map), function(err) {
     if(err) {
         return console.log(err);
     }else{
-      console.log("Wrote template map");
+      console.log("✅ Wrote template map");
     }
   }); 
 });

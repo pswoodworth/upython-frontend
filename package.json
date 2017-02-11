@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "template": "mustache ./build/template-map.json ./src/index.mustache > ./build/index.html",
+    "template": "mustache ./build/src/template-map.json ./src/index.mustache > ./build/index.html",
     "build-js": "webpack",
-    "build-css": "node-sass src/scss/entry.scss build/build.css",
+    "build-css": "node-sass src/scss/entry.scss build/src/build.css",
+    "postbuild-css": "postcss --use autoprefixer -b 'last 2 versions' --no-map build/src/build.css -o build/src/build.css",
     "build": "npm run build-js && npm run build-css && npm run postbuild-css && node map-template.js && npm run template"
   },
   "author": "",
